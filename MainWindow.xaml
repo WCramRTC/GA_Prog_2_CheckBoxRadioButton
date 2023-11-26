@@ -11,78 +11,175 @@
     Width="800">
     <Canvas>
         <CheckBox
+            x:Name="chkRaining"
             Content="Is It Raining?"
-            Canvas.Left="216"
-            Canvas.Top="70"
+            Canvas.Left="35"
+            Canvas.Top="46"
             IsChecked="True" />
-        <RadioButton
-            Content="Red"
-            Canvas.Left="477"
-            Canvas.Top="93" />
         <CheckBox
+            x:Name="chkTimeSensitive"
             Content="Is it Time Sensitive?"
-            Canvas.Left="216"
-            Canvas.Top="90"
-            HorizontalAlignment="Center"
+            Canvas.Left="35"
+            Canvas.Top="66"
+            HorizontalAlignment="Left"
             VerticalAlignment="Top" />
         <Label
             Content="What is your &#xD;&#xA;favorite color?"
-            Canvas.Left="477"
-            Canvas.Top="48"
-            HorizontalAlignment="Center"
+            Canvas.Left="37"
+            Canvas.Top="130"
+            HorizontalAlignment="Left"
             VerticalAlignment="Top" />
         <RadioButton
+            x:Name="rbRed"
             Content="Red"
-            Canvas.Left="477"
-            Canvas.Top="93"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Center"
-            IsChecked="True" 
-            GroupName="Color"
-            />
+            Canvas.Left="37"
+            Canvas.Top="175"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            IsChecked="True"
+            GroupName="Color" />
         <RadioButton
+            x:Name="rbGreen"
             Content="Green"
-            Canvas.Left="477"
-            Canvas.Top="113"
-            HorizontalAlignment="Center"
+            Canvas.Left="37"
+            Canvas.Top="195"
+            HorizontalAlignment="Left"
             VerticalAlignment="Top"
             GroupName="Color" />
         <RadioButton
+            x:Name="rbBlue"
             Content="Blue"
-            Canvas.Left="477"
-            Canvas.Top="133"
-            HorizontalAlignment="Center"
+            Canvas.Left="37"
+            Canvas.Top="215"
+            HorizontalAlignment="Left"
             VerticalAlignment="Top"
             GroupName="Color" />
         <CheckBox
+            x:Name="chkUseMailing"
             Content="Use your mailing address?"
-            Canvas.Left="216"
-            Canvas.Top="110"
-            HorizontalAlignment="Center"
+            Canvas.Left="35"
+            Canvas.Top="86"
+            HorizontalAlignment="Left"
             VerticalAlignment="Top" />
         <RadioButton
+            x:Name="rbSmall"
             Content="Small"
-            Canvas.Left="567"
-            Canvas.Top="93"
+            Canvas.Left="39"
+            Canvas.Top="293"
             IsChecked="True"
             HorizontalAlignment="Left"
-            VerticalAlignment="Center" 
-            GroupName="Size"
-            />
+            VerticalAlignment="Top"
+            GroupName="Size" />
         <RadioButton
+            x:Name="rbMedium"
             Content="Medium"
-            Canvas.Left="567"
-            Canvas.Top="113"
+            Canvas.Left="39"
+            Canvas.Top="313"
             HorizontalAlignment="Left"
-            VerticalAlignment="Center"
+            VerticalAlignment="Top"
             GroupName="Size" />
         <RadioButton
+            x:Name="rbLarge"
             Content="Large"
-            Canvas.Left="567"
-            Canvas.Top="133"
+            Canvas.Left="39"
+            Canvas.Top="333"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            GroupName="Size" />
+        <Label
+            Content="What size pizza?"
+            Canvas.Left="35"
+            Canvas.Top="262"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top" />
+        <RichTextBox
+            Height="316"
+            Width="207"
+            Canvas.Left="222"
+            Canvas.Top="44"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top">
+            <FlowDocument>
+                <Paragraph>
+                    <Run
+                        x:Name="rtbDisplay" />
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+        <Button
+            x:Name="btnDisplayInfo"
+            Content="Display Information"
+            Canvas.Left="35"
+            Canvas.Top="391"
             HorizontalAlignment="Left"
             VerticalAlignment="Center"
-            GroupName="Size" />
+            Width="394"
+            Click="btnDisplayInfo_Click" />
+        <Canvas
+            x:Name="canvasLight"
+            Height="340"
+            Width="289"
+            Canvas.Left="472"
+            Canvas.Top="44"
+            Background="White">
+            <CheckBox
+                x:Name="chkLightSwitch"
+                Content="Light Switch"
+                Canvas.Left="68"
+                Canvas.Top="26"
+                FontSize="20"
+                FontWeight="Bold"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Click="chkLightSwitch_Checked"
+                IsChecked="True" />
+            <RadioButton
+                x:Name="rbPurple"
+                Content="Purple"
+                Canvas.Left="25"
+                Canvas.Top="115"
+                Click="rbChangeColor_Click"
+                />
+            <RadioButton
+                x:Name="rbOrange"
+                Content="Orange"
+                Canvas.Left="25"
+                Canvas.Top="155"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Click="rbChangeColor_Click" />
+            <RadioButton
+                x:Name="rbGreen1"
+                Content="Green"
+                Canvas.Left="25"
+                Canvas.Top="192"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top" />
+            <RadioButton
+                x:Name="rbBlack"
+                Content="Black"
+                Canvas.Left="153"
+                Canvas.Top="115"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Click="rbChangeColor_Click" />
+            <RadioButton
+                x:Name="rbYellow"
+                Content="Yellow"
+                Canvas.Left="153"
+                Canvas.Top="155"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Click="rbChangeColor_Click" />
+            <RadioButton
+                x:Name="rbWhite"
+                Content="White"
+                Canvas.Left="153"
+                Canvas.Top="192"
+                HorizontalAlignment="Left"
+                VerticalAlignment="Center"
+                Click="rbChangeColor_Click" />
+        </Canvas>
 
     </Canvas>
 </Window>
