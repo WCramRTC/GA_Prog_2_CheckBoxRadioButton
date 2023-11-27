@@ -146,3 +146,91 @@ You can set which box is check by assigning true to its `.IsChecked` property. *
 
 --- 
 
+## Assignment
+
+`Designer`
+
+1. Add 3 Check Boxes
+    1. `Content="Is Raining" x:Name="chkRaining"`
+    2. `Content="Is it Time Sensitive?" x:Name="chkTimeSensitive"`
+    3. One of your choice
+
+    Example:  
+![Check Box Options](Images/CheckBox_Options.png)
+
+2. Add a Label and 3 Radio Buttons
+    1. Label: `Content="What is your favorite color?"` 
+    2. 3 Radio Buttons ( Content, Name, and Group Name)
+        1. `Content="Red" x:Name="rbRed" GroupName="Color"`
+        2. `Content="Blue" x:Name="rbBlue" GroupName="Color"`
+        3. `Content="Green" x:Name="rbGreen" GroupName="Color"`
+
+    Example:  
+![R B Example](Images/RB_Example.png)
+
+3. Add another Label and at least 3 radio buttons
+    1. Label: Your choice of question
+    2. Your choice of radio buttons. 
+        - Make sure to add content, names, and group name.
+
+4. Add a Rich Text Box
+    - Give the Run the name of `rtbDisplay`.
+
+5. Add a button
+    - `x:Name="btnDisplayInfo" Content="Display Information"`
+    - Add a click event
+
+6. In the click event write the code to output the results based on what's clicked.
+
+Example
+```csharp
+    private void btnDisplayInfo_Click(object sender, RoutedEventArgs e)
+    {
+        // We will keep appending to this string before we display it to our rich text box.
+        string formattedString = "";
+
+
+        // Grabbing Check Box Information
+        bool isRaining = chkRaining.IsChecked.Value;
+        bool isTimeSensitive = chkTimeSensitive.IsChecked.Value;
+        bool useMailingAddress = chkUseMailing.IsChecked.Value;
+
+        // Here we are appending the results from our check box
+        formattedString += $"Is Raining : {isRaining}\n\n";
+        formattedString += $"Is Time Sensitive : {isTimeSensitive}\n\n";
+        formattedString += $"Use Mailing Address : {useMailingAddress}\n\n";
+
+        // Which Color
+        bool isRed = rbRed.IsChecked.Value;
+        bool isGreen = rbGreen.IsChecked.Value;
+        bool isBlue = rbBlue.IsChecked.Value;
+
+        formattedString += "Your favorite color is ";
+
+        // Using an If Else statement, we display which color is the users favorite
+        if(isRed) { formattedString += "red\n"; }
+        else if(isGreen) { formattedString += "green\n"; }
+        else { formattedString += "blue\n"; }
+
+        // Replace this wil your code
+        // Which Size
+        bool small = rbSmall.IsChecked.Value;
+        bool medium = rbMedium.IsChecked.Value;
+        bool large = rbLarge.IsChecked.Value;
+
+        formattedString += "\nYour pizza size is ";
+
+        if (small) { formattedString += "small\n"; }
+        else if (medium) { formattedString += "medium\n"; }
+        else { formattedString += "large\n"; }
+
+        // Here we assign our formattedString string to our rich text box
+        rtbDisplay.Text = formattedString;
+        } // End btnDisplayInfo_Click()
+```
+
+![Final Result](Images/Final_Result.gif)
+
+---
+
+Also included is an example of using a check box and radio buttons to replicate turning on and off a light switch, then changing the color values associated with it. Feel free to take it apart.

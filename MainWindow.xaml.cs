@@ -67,10 +67,6 @@ namespace GA_Prog_2_CheckBoxRadioButton
 
         private void chkLightSwitch_Checked(object sender, RoutedEventArgs e)
         {
-
-            byte r = 0;
-            byte g = 0;
-            byte b = 0;
             bool isOn = chkLightSwitch.IsChecked.Value;
 
             if(isOn)
